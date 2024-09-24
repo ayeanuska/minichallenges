@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar system animation challenge</title>
+    <style>
+      :root {
+        --planet-size: 30vh;
+        --orbit-size: 50vh;
+        --revolution-speed: 2s;
+      }
+
+      .solarsystem {
+        background: wheat;
+        background-image: url("./assets/universe2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .planet {
+        border-radius: 50%;
+        position: absolute;
+        overflow: hidden;
+      }
+      .sun {
+        --planet-size: 10vh;
+        --revolution-speed: 0s;
+
+        background: rgb(255, 235, 120);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        box-shadow: 0px 0px 9px 10px gold;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .mercury {
+        --planet-size: 2vh;
+        --revolution-speed: 1s;
+        --orbit-size: 10vh;
+
+        background: rgba(255, 68, 0, 0.518);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+
+      .venus {
+        --planet-size: 5vh;
+        --revolution-speed: 2s;
+        --orbit-size: 13vh;
+
+        background: rgba(255, 166, 0, 0.668);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+
+      .earth {
+        --planet-size: 8vh;
+        --revolution-speed: 3s;
+        --orbit-size: 18vh;
+
+        background: rgba(45, 45, 191, 0.482);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+      .mars {
+        --planet-size: 7vh;
+        --revolution-speed: 6s;
+        --orbit-size: 27vh;
+
+        background: rgba(169, 22, 22, 0.605);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+      .jupiter {
+        --planet-size: 5vh;
+        --revolution-speed: 7s;
+        --orbit-size: 25vh;
+
+        background: rgb(143, 98, 135);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+      .saturn {
+        --planet-size: 8vh;
+        --revolution-speed: 2s;
+        --orbit-size: 30vh;
+
+        background: rgba(90, 160, 99, 0.666);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+      .uranus {
+        --planet-size: 9vh;
+        --revolution-speed: 2s;
+        --orbit-size: 35vh;
+
+        background: rgba(189, 77, 191, 0.708);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+      .neptune {
+        --planet-size: 12vh;
+        --revolution-speed: 8s;
+        --orbit-size: 40vh;
+
+        background: rgba(14, 159, 226, 0.772);
+        width: var(--planet-size);
+        height: var(--planet-size);
+        animation: rotation var(--revolution-speed) linear infinite;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg) translate(var(--orbit-size));
+        }
+        to {
+          transform: rotate(360deg) translate(var(--orbit-size));
+        }
+      }
+
+      .planet > img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="solarsystem">
+      <div class="sun planet"></div>
+      <div class="mercury planet"></div>
+      <div class="venus planet"></div>
+      <div class="earth planet">
+        <img src="./assets/earth.jpg" alt="earth" />
+      </div>
+      <div class="mars planet"></div>
+      <div class="jupiter planet"></div>
+      <div class="uranus planet"></div>
+      <div class="neptune planet"></div>
+    </div>
+  </body>
+</html>
